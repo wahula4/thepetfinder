@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title class="title">Lost Pet Finder</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+    integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link href="./css/style2.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <ul>
+    <div class="navText">
+      <li><a class="active" href="index.html">🐾</a></li>
+      <li><a class="active" href="ifound.html">I Found a Pet</a></li>
+      <li><a class="active" href="ilost.html">I Lost a Pet</a></li>
+      <li><a class="active" href="lostDisplay.html">Lost Pets List</a></li>
+      <li><a class="active" href="foundDisplay.html">Found Pets List</a></li>
+      <li><a class="active" href="contact.html">About/Contact/FAQ</a></li>
+    </div>
+  </ul>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <div class="panel panel-default">
+          <div class="panel-heading">I found a pet</div>
+          <div class="panel-body">
+            <form class="form-horizontal found-form">
+
+              <div class="form-group row">
+                <label class="control-label col-sm-2" for="userName">Your Name:</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" name="foundName" id="userName" placeholder="Hero">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="control-label col-sm-2" for="emailFound">Email:</label>
+                <div class="col-sm-10">
+                  <input type="email" class="form-control" name="emailFound" id="emailFound" placeholder="email">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="control-label col-sm-2" for="phoneFound">Phone Number:</label>
+                <div class="col-sm-10">
+                  <input type="tel" class="form-control" name="phoneFound" id="phoneFound" placeholder="phone number">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="control-label col-sm-2" for="addressFound">Address Found:</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" class="addressFound" id="addressFound" placeholder="1234 example street">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="control-label col-sm-2" for="typeFound">Animal type:</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" class="typeFound" id="animalFound" placeholder="Dog, cat, bird ect.">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="control-label col-sm-2" for="dateFound">Date Found:</label>
+                <div class="col-sm-10">
+                  <input type="date" class="form-control" class="dateFound" id="dateFound" placeholder="">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="control-label col-sm-2" for="genderFound">Gender:</label>
+                <div class="col-sm-10">
+                  <label class="radio-inline">
+                    <input type="radio" name="genderFound">Male
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="genderFound">Female
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="control-label col-sm-2" for="commentFound">Additional Info:</label>
+                <div class="col-sm-10">
+                  <textarea class="form-control" rows="3" name="commentLost" id="commentFound"></textarea>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="control-label col-sm-2" for="photoFound">Photo URL:</label>
+                <div class="col-sm-10">
+                  <input type="file" class="form-control-file" id="photoFound" placeholder="URL">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-sm-offset-2 col-sm-10">
+                  <button type="submit" class="btn btn-default">Submit</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <!-- close panel body -->
+        </div>
+        <!--close panel  -->
+      </div>
+      <!-- close col -->
+    </div>
+      <!-- close row -->
+</div>
+<!-- container -->
+
+<style media="screen">
+  .panel {
+    margin-top: 40px;
+  }
+
+  body {
+ background: url('./images/mountainhome.jpg') no-repeat center center fixed;
+ background-size: cover;
+}
+</style>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+
+</html>

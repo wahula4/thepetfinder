@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title class="title">Lost Pet Finder</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+    integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link href="./css/style2.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <ul>
+    <div class="navText">
+      <li><a class="active" href="index.html">🐾</a></li>
+      <li><a class="active" href="ifound.html">I Found a Pet</a></li>
+      <li><a class="active" href="ilost.html">I Lost a Pet</a></li>
+      <li><a class="active" href="lostDisplay.html">Lost Pets List</a></li>
+      <li><a class="active" href="foundDisplay.html">Found Pets List</a></li>
+      <li><a class="active" href="contact.html">About/Contact/FAQ</a></li>
+    </div>
+  </ul>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <div class="panel panel-default">
+          <div class="panel-heading">I lost my pet</div>
+          <div class="panel-body">
+            <form action="./api/posts" method="POST" class="form-horizontal lost-form">
+
+              <div class="form-group row">
+                <label class="control-label col-sm-2" for="userName">Your Name:</label>
+                <div class="col-sm-10">
+                  <input name ="nameLost" type="text" class="form-control" id="userName" placeholder="Hero">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="control-label col-sm-2" for="petName">Pet's Name:</label>
+                <div class="col-sm-10">
+                  <input name ="petName" type="text" class="form-control" id="petName" placeholder="Lassie">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="control-label col-sm-2" for="emailLost">Email:</label>
+                <div class="col-sm-10">
+                  <input name ="emailLost" type="email" class="form-control" id="emailLost" placeholder="email">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="control-label col-sm-2" for="phoneLost">Phone Number:</label>
+                <div class="col-sm-10">
+                  <input name ="phoneLost" type="tel" class="form-control" id="phoneLost" placeholder="phone number">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="control-label col-sm-2" for="addressLost">Address Last Seen:</label>
+                <div class="col-sm-10">
+                  <input name ="addressLost" type="text" class="form-control" id="addressLost" placeholder="1234 example street">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="control-label col-sm-2" for="typeLost">Type of Animal:</label>
+                <div class="col-sm-10">
+                  <input name ="typeLost" type="text" class="form-control" id="typeLost" placeholder="Dog, cat, bird ect.">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="control-label col-sm-2" for="dateLost">Date Lost:</label>
+                <div class="col-sm-10">
+                  <input name ="dateLost" type="date" class="form-control" id="dateLost" placeholder="">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="control-label col-sm-2" for="genderLost">Gender:</label>
+                <div class="col-sm-10">
+                  <label class="radio-inline">
+                    <input  id="genderMale" type="radio" name="genderLost" value="Male">Male
+                  </label>
+                  <label class="radio-inline">
+                    <input  id="genderFemale" type="radio" name="genderLost" value="Female">Female
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="control-label col-sm-2" for="commentLost">Additional Info:</label>
+                <div class="col-sm-10">
+                  <textarea name="commentLost" class="form-control" rows="3" id="commentLost"></textarea>
+                </div>
+              </div>
+
+              <!-- <div class="form-group row">
+                <label class="control-label col-sm-2" for="photoLost">Photo URL:</label>
+                <div class="col-sm-10">
+                  <input name="photoLost" type="file" class="form-control-file" id="photoLost" placeholder="URL">
+                </div>
+              </div> -->
+              <form ref="uploadForm" action="/upload" method="post" enctype="multipart/form-data">
+          			<input type="file" name="sampleFile"/>
+          			<input type="submit" value="Upload!"/>
+          		</form>
+
+              <div class="form-group row">
+                <div class="col-sm-offset-2 col-sm-10">
+                  <button type="submit" class="btn btn-default">Submit</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <!-- close panel body -->
+        </div>
+        <!--close panel  -->
+      </div>
+      <!-- close col -->
+    </div>
+      <!-- close row -->
+</div>
+<!-- container -->
+
+<style media="screen">
+  .panel {
+    margin-top: 40px;
+  }
+
+  body {
+ background: url('./images/fence.jpg') no-repeat center center fixed;
+ background-size: cover;
+}
+</style>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- <script src="js/ilost.js" type="text/javascript"></script> -->
+
+  <script>
+  function dev()
+  {
+  var lostForm = $(".lost-form");
+  var userName = $("#userName");
+  var petName = $("#petName");
+  var emailLost = $("#emailLost");
+  var phoneLost = $("#phoneLost");
+  var addressLost = $("#addressLost");
+  var typeLost = $("#typeLost");
+  var dateLost = $("#dateLost");
+  var genderLost = $("#genderLost");
+  var commentLost = $("#commentLost");
+
+  userName.val('Tony')
+  petName.val('Lassie');
+  emailLost.val('masdf@gmail.com');
+  phoneLost.val('343-343-4343');
+  addressLost.val('1234 street');
+  typeLost.val('dinosaur');
+  dateLost.val('2017-04-19');
+  $("#genderMale").prop("checked", true);
+  commentLost.val('comment');
+  }
+
+  dev();
+  </script>
+</body>
+
+</html>

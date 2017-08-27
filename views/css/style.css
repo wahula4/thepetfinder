@@ -1,0 +1,192 @@
+body
+{
+background-image: url("../images/background.png");
+background-size: cover;
+}
+
+.resHead
+{
+	text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  color: black!important;
+  font-size: 75px;
+  text-shadow: 1px 1px orange;
+}
+
+.resText
+{
+	text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  color: black!important;
+  font-size: 25px;
+}
+
+.navText
+{
+    font-family: 'Montserrat', sans-serif!important;
+}
+
+
+body {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#wrapper {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.buttonStyle:hover {
+  background-color: #ffffff;
+  border-color: black;
+  color: black;
+}
+
+.buttonStyle {
+  font-size: 2.0rem;
+  padding: 1.25rem 2.5rem;
+  border: 1px solid transparent;
+  background-color: #333;
+  margin: 3px;
+  color: white;
+  text-decoration: none;
+
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+@media (min-width: 767px) { 
+  .firstButton {
+    text-align: right;
+  }
+
+  .secondButton {
+    text-align: left;
+  }
+}
+
+.chicago {
+  width: 100%;
+  position: fixed;
+  bottom: -350px;
+  z-index: 1
+  -webkit-mask-image:-webkit-gradient(linear, left bottom, left top, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)))
+}
+
+.chicagoSecond {
+  opacity: 0.5;
+  position: fixed;
+  bottom: 0;
+  height: 70%;
+  width: 100%;
+  padding-left: 169px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+
+.questionsFont {
+
+font-family: 'Montserrat', sans-serif; font-size: 20px;
+}
+
+.questionsBlock {
+
+  width: 100%;
+  max-width: 1047px;
+  padding-top: 30px;
+  padding-bottom: 50px;
+  max-height: 100%;
+  margin: 0 0 0 228px;
+  background: #b4b4b4;
+  border: 4px solid #000000;
+}
+
+.questionsText {
+  padding-left: 50px;
+}
+
+.nameEntry {
+  padding-left: 1px;
+}
+
+.photoEntry {
+  padding-left: 1px;
+}
+
+.footer {
+  width: 100%;
+  padding-top: 30px;
+  padding-bottom: 50px;
+  max-height: 100%;
+  margin: 10px 0 0 0;
+  background-color: #888888;
+  border: 4px solid #000000;
+  position: absolute;
+}
+
+.footerContainer {
+  width: 100%;
+}
+
+.footerText {
+
+  color: white;
+  text-align: center;
+}
+
+.questionRow {
+  margin-right: 0 !important;
+}
+
+.row {
+  margin-right: 0 !important;
+}
+
+a {
+  text-decoration: none!important;
+}
+
+.buttonPosition
+{
+  text-align: center;
+  margin-top: 400px;
+}
