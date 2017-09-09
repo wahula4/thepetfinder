@@ -2,14 +2,14 @@ $(document).ready(function() {
   /* global moment */
   // lostContainer holds all of our posts
   var lostContainer = $(".lost-container");
-  var posts;
+  var lostposts;
 
   // This function grabs posts from the database and updates the view
   function getPosts() {
-    $.get("./api/posts", function(data) {
+    $.get("./api/lostposts", function(data) {
       console.log("Posts", data);
-      posts = data.reverse();
-      if (!posts || !posts.length) {
+      lostposts = data.reverse();
+      if (!lostposts || !lostposts.length) {
         displayEmpty();
       }
       else {
@@ -25,8 +25,8 @@ $(document).ready(function() {
   function initializeRows() {
     lostContainer.empty();
     var postsToAdd = [];
-    for (var i = 0; i < posts.length; i++) {
-      postsToAdd.push(createNewRow(posts[i]));
+    for (var i = 0; i < lostposts.length; i++) {
+      postsToAdd.push(createNewRow(lostposts[i]));
     }
     lostContainer.append(postsToAdd);
   }
@@ -41,33 +41,43 @@ $(document).ready(function() {
     var newPostDate = $("<small>");
     newPostDate.css({
       float: "right",
-      "font-weight": "400",
-      "font-size": "15px"
+      "font-weight": "700",
+      "margin-top":
+      "-15px"
     });
     var newPostPanelBody = $("<div>");
     newPostPanelBody.addClass("panel-body");
     newPostTitle.text(post.petName + " ");
+
     var formattedDate = new Date(post.createdAt);
-    // formattedDate = moment(formattedDate).format("MMMM Do YYYY, h:mm:ss a");
+    formattedDate = moment(formattedDate).format("MMMM Do YYYY, h:mm:ss a");
     newPostDate.text(formattedDate);
+
     var newAnimalType = $("<p>");
     newAnimalType.text("Animal Type: " + post.typeLost);
+
     var newLostAddress = $("<p>");
     newLostAddress.text("Address Last Seen: " + post.addressLost);
+
     var newLostDate = $("<p>");
     newLostDate.text("Date Lost: " + post.dateLost);
+
     var newLostGender = $("<p>");
     newLostGender.text("Gender: " + post.genderLost);
+
     var newLostComment = $("<p>");
     newLostComment.text("Additonal Info: " + post.commentLost);
+
     var newLostName = $("<p>");
     newLostName.text("Contact Name: " + post.nameLost);
+
     var newLostEmail = $("<p>");
     newLostEmail.text("Contact Email: " + post.emailLost);
+
     var newLostPhone = $("<p>");
     newLostPhone.text("Contact Phone: " + post.phoneLost);
-    // var newLostPic = $("<p>");
-    // newLostPic.image(post.photoLost);
+    // var newLostPhoto = $("<div>");
+    // newLostPhoto.blob(post.photoLost);
 
     newPostTitle.append(newPostDate);
     newPostPanelHeading.append(newPostTitle);
@@ -79,7 +89,7 @@ $(document).ready(function() {
     newPostPanelBody.append(newLostName);
     newPostPanelBody.append(newLostEmail);
     newPostPanelBody.append(newLostPhone);
-    // newPostPanelBody.append(newLostPic);
+    // newPostPanelBody.append(newLostPhoto);
 
     newPostPanel.append(newPostPanelHeading);
     newPostPanel.append(newPostPanelBody);
@@ -87,7 +97,7 @@ $(document).ready(function() {
     return newPostPanel;
   }
 
-  // This function displays a messgae when there are no posts
+  // This function displays a message when there are no posts
   function displayEmpty() {
     lostContainer.empty();
     var messageh2 = $("<h2>");

@@ -2,14 +2,14 @@ $(document).ready(function() {
   /* global moment */
   // foundContainer holds all of our posts
   var foundContainer = $(".found-container");
-  var posts;
+  var foundposts;
 
   // This function grabs posts from the database and updates the view
   function getPosts() {
-    $.get("/api/thepetfinder", function(data) {
+    $.get("/api/foundposts", function(data) {
       console.log("Posts", data);
-      posts = data;
-      if (!posts || !posts.length) {
+    foundposts = data.reverse();
+      if (!foundposts || !foundposts.length) {
         displayEmpty();
       }
       else {
@@ -25,8 +25,8 @@ $(document).ready(function() {
   function initializeRows() {
     foundContainer.empty();
     var postsToAdd = [];
-    for (var i = 0; i < posts.length; i++) {
-      postsToAdd.push(createNewRow(posts[i]));
+    for (var i = 0; i < foundposts.length; i++) {
+      postsToAdd.push(createNewRow(foundposts[i]));
     }
     foundContainer.append(postsToAdd);
   }
@@ -42,29 +42,40 @@ $(document).ready(function() {
     newPostDate.css({
       float: "right",
       "font-weight": "700",
-      "margin-top":
-      "-15px"
+      "margin-top": "-15px"
     });
+
     var newPostPanelBody = $("<div>");
     newPostPanelBody.addClass("panel-body");
-    newPostTitle.text("Lost " + post.typeofAnimal);
+    newPostTitle.text("Lost " + post.typeFound);
+
     var formattedDate = new Date(post.createdAt);
     formattedDate = moment(formattedDate).format("MMMM Do YYYY, h:mm:ss a");
     newPostDate.text(formattedDate);
+
     var newFoundAddress = $("<p>");
     newFoundAddress.text("Address Last Seen: " + post.addressFound);
+
     var newFoundDate = $("<p>");
     newFoundDate.text("Date Lost: " + post.dateFound);
+
     var newFoundGender = $("<p>");
     newFoundGender.text("Gender: " + post.genderFound);
+
     var newFoundComment = $("<p>");
-    newFoundComment.text("Additonal Info: " + post.addlInfofound);
+    newFoundComment.text("Additonal Info: " + post.commentFound);
+
     var newFoundName = $("<p>");
-    newFoundName.text("Contact Name: " + post.foundName);
+    newFoundName.text("Contact Name: " + post.nameFound);
+
     var newFoundEmail = $("<p>");
-    newFoundEmail.text("Contact Email: " + post.emailfound);
+    newFoundEmail.text("Contact Email: " + post.emailFound);
+
     var newFoundPhone = $("<p>");
     newFoundPhone.text("Contact Phone: " + post.phoneFound);
+
+    var newFoundPic = $("<div>");
+    newFoundPic.text(post.photoFound);
 
     newPostTitle.append(newPostDate);
     newPostPanelHeading.append(newPostTitle);
@@ -75,14 +86,15 @@ $(document).ready(function() {
     newPostPanelBody.append(newFoundName);
     newPostPanelBody.append(newFoundEmail);
     newPostPanelBody.append(newFoundPhone);
+    newPostPanelBody.append(newFoundPic);
 
-    newPostPanel.prepend(newPostPanelHeading);
-    newPostPanel.prepend(newPostPanelBody);
+    newPostPanel.append(newPostPanelHeading);
+    newPostPanel.append(newPostPanelBody);
     newPostPanel.data("post", post);
     return newPostPanel;
   }
 
-  // This function displays a messgae when there are no posts
+  // This function displays a message when there are no posts
   function displayEmpty() {
     foundContainer.empty();
     var messageh2 = $("<h2>");

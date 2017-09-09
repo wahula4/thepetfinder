@@ -22,23 +22,25 @@ $(document).ready(function() {
   var dateFound = $("#dateFound");
   var genderFound = $("#genderFound");
   var commentFound = $("#commentFound");
+  var photoFound = $("#photoFound")
   // Adding an event listener for when the form is submitted
   $(foundForm).on("submit", function handleFormSubmit(event) {
     event.preventDefault();
-    // Wont submit the post if we are missing a body or a title
+    // Won't submit the post if we are missing a body or a title
     if (!userName.val().trim() || !emailFound.val().trim() || !phoneFound.val().trim()) {
       return;
     }
     // Constructing a newPost object to hand to the database
     var newPost = {
-      namelost: userName.val().trim(),
-      emailfound: emailFound.val().trim(),
+      nameFound: userName.val().trim(),
+      emailFound: emailFound.val().trim(),
       phoneFound: phoneFound.val().trim(),
       addressFound: addressFound.val().trim(),
-      typeofAnimal: typeFound.val().trim(),
+      typeFound: typeFound.val().trim(),
       dateFound: dateFound.val().trim(),
       genderFound: genderFound.val().trim(),
-      addlInfofound: commentFound.val().trim()
+      commentFound: commentFound.val().trim(),
+      photoFound: photoFound.val().trim()
     };
 
     console.log(newPost);

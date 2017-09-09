@@ -23,6 +23,7 @@ $(document).ready(function() {
   var dateLost = $("#dateLost");
   var genderLost = $("#genderLost");
   var commentLost = $("#commentLost");
+  // var photoLost = $("#photoLost")
   // Adding an event listener for when the form is submitted
   $(lostForm).on("submit", function handleFormSubmit(event) {
     event.preventDefault();
@@ -41,6 +42,7 @@ $(document).ready(function() {
       dateLost: dateLost.val().trim(),
       genderLost: genderLost.val().trim(),
       commentLost: commentLost.val().trim()
+      // photoLost: photoLost.val().trim()
     };
 
     console.log(newPost);

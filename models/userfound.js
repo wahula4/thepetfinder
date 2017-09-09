@@ -1,6 +1,6 @@
 module.exports = function(sequelize, DataTypes){
 var UserFound = sequelize.define("user_found", {
-  foundName: {
+  nameFound: {
     type: DataTypes.STRING,
     allowNull: false,
       validate: {
@@ -49,9 +49,16 @@ var UserFound = sequelize.define("user_found", {
         len: [1]
       }
   },
-  commentLost: {
-    type: DataTypes.STRING
+  commentFound: {
+    type: DataTypes.STRING,
   }
+  // photoFound: {
+  //   type: DataTypes.STRING,
+  //   isURL: true,
+  // }
+  // photoFound: {
+  //   type: DataTypes.BLOB
+  // }
 });
 
 return UserFound;

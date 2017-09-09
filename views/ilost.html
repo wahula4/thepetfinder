@@ -23,7 +23,7 @@
     <div class="navText">
       <li><a class="active" href="index.html">🐾</a></li>
       <li><a class="active" href="ifound.html">I Found a Pet</a></li>
-      <li><a class="active" href="ilost.html">I Lost a Pet</a></li>
+      <li><a class="active orangeHead" href="ilost.html">I Lost a Pet</a></li>
       <li><a class="active" href="lostDisplay.html">Lost Pets List</a></li>
       <li><a class="active" href="foundDisplay.html">Found Pets List</a></li>
       <li><a class="active" href="contact.html">About/Contact/FAQ</a></li>
@@ -36,7 +36,7 @@
         <div class="panel panel-default">
           <div class="panel-heading">I lost my pet</div>
           <div class="panel-body">
-            <form action="./api/posts" method="POST" class="form-horizontal lost-form">
+            <form action="./api/lostposts" method="POST" class="form-horizontal lost-form" enctype="multipart/form-data">
 
               <div class="form-group row">
                 <label class="control-label col-sm-2" for="userName">Your Name:</label>
@@ -55,7 +55,7 @@
               <div class="form-group row">
                 <label class="control-label col-sm-2" for="emailLost">Email:</label>
                 <div class="col-sm-10">
-                  <input name ="emailLost" type="email" class="form-control" id="emailLost" placeholder="email">
+                  <input name ="emailLost" type="email" class="form-control" id="emailLost" placeholder="e-mail">
                 </div>
               </div>
 
@@ -67,16 +67,16 @@
               </div>
 
               <div class="form-group row">
-                <label class="control-label col-sm-2" for="addressLost">Address Last Seen:</label>
+                <label class="control-label col-sm-2" for="addressLost">Location Last Seen:</label>
                 <div class="col-sm-10">
-                  <input name ="addressLost" type="text" class="form-control" id="addressLost" placeholder="1234 example street">
+                  <input name ="addressLost" type="text" class="form-control" id="addressLost" placeholder="1234 example street OR corner of X and Y, etc.">
                 </div>
               </div>
 
               <div class="form-group row">
                 <label class="control-label col-sm-2" for="typeLost">Type of Animal:</label>
                 <div class="col-sm-10">
-                  <input name ="typeLost" type="text" class="form-control" id="typeLost" placeholder="Dog, cat, bird ect.">
+                  <input name ="typeLost" type="text" class="form-control" id="typeLost" placeholder="Dog, cat, bird etc.">
                 </div>
               </div>
 
@@ -106,16 +106,16 @@
                 </div>
               </div>
 
-              <!-- <div class="form-group row">
-                <label class="control-label col-sm-2" for="photoLost">Photo URL:</label>
+              <div class="form-group row">
+                <label class="control-label col-sm-2" for="photoLost">Photo Photo (limit to 350x350):</label>
                 <div class="col-sm-10">
                   <input name="photoLost" type="file" class="form-control-file" id="photoLost" placeholder="URL">
                 </div>
-              </div> -->
-              <form ref="uploadForm" action="/upload" method="post" enctype="multipart/form-data">
+              </div>
+              <!-- <form ref="uploadForm" action="/upload" method="post" enctype="multipart/form-data">
           			<input type="file" name="sampleFile"/>
           			<input type="submit" value="Upload!"/>
-          		</form>
+          		</form> -->
 
               <div class="form-group row">
                 <div class="col-sm-offset-2 col-sm-10">
@@ -167,11 +167,11 @@
   petName.val('Lassie');
   emailLost.val('masdf@gmail.com');
   phoneLost.val('343-343-4343');
-  addressLost.val('1234 street');
-  typeLost.val('dinosaur');
+  addressLost.val('corner of Hampden and Monaco');
+  typeLost.val('dog');
   dateLost.val('2017-04-19');
   $("#genderMale").prop("checked", true);
-  commentLost.val('comment');
+  commentLost.val('Very shy, needs meds.');
   }
 
   dev();

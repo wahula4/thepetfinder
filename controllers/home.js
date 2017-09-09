@@ -4,4 +4,4 @@ var router = express.Router();
 router.get("/", function(req, res){
   res.render("home", {title:"yuck"})
 })
-module.exports=router
+module.exports=router;
