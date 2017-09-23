@@ -76,8 +76,9 @@ $(document).ready(function() {
 
     var newLostPhone = $("<p>");
     newLostPhone.text("Contact Phone: " + post.phoneLost);
-    // var newLostPhoto = $("<div>");
-    // newLostPhoto.blob(post.photoLost);
+
+    var newLostPhoto = $("<div>");
+    newLostPhoto.text(post.photoLost)
 
     newPostTitle.append(newPostDate);
     newPostPanelHeading.append(newPostTitle);
@@ -89,7 +90,7 @@ $(document).ready(function() {
     newPostPanelBody.append(newLostName);
     newPostPanelBody.append(newLostEmail);
     newPostPanelBody.append(newLostPhone);
-    // newPostPanelBody.append(newLostPhoto);
+    newPostPanelBody.append(newLostPhoto);
 
     newPostPanel.append(newPostPanelHeading);
     newPostPanel.append(newPostPanelBody);

@@ -8,7 +8,7 @@ var sequelize = require('sequelize');
 // for file uploads
 var fileUpload = require('express-fileupload');
 var s3 = require('s3');
-var keys = require('./views/js/keys.js');
+var keys = require('./keys.js');
 
 var db = require('./models');
 var app = express();
@@ -18,6 +18,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
+
 app.use(express.static('./views'));
 
 var client = s3.createClient({

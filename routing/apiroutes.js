@@ -7,6 +7,10 @@
 var s3 = require('s3')
 var keys = require("../keys.js");
 
+// var db = require('../models');
+// var  = require('../models/userfound.js')
+// var  = require('../models/userlost.js')
+
 var client = s3.createClient({
 	maxAsyncS3: 20, // this is the default
 	s3RetryCount: 3, // this is the default
